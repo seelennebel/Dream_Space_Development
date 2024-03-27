@@ -1,3 +1,10 @@
+<script setup>
+
+import AccountLink from "../components/AccountLink.vue";
+
+</script>
+
+
 <template>
     <main>
         <div id = "container">
@@ -8,7 +15,7 @@
                 <img src = "../assets/svg_photos/main_text.svg">
             </div>
             <div class = "flex-elements">
-                <img src = "../assets/svg_photos/my_account.svg">
+                <AccountLink />         
             </div>
         </div>
 
