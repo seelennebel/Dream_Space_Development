@@ -1,6 +1,8 @@
 <script setup>
 
 import AccountLink from "../components/AccountLink.vue";
+import LogoLink from "../components/LogoLink.vue";
+import MainSleepCycle from "../components/MainSleepCycle.vue";
 
 </script>
 
@@ -8,13 +10,13 @@ import AccountLink from "../components/AccountLink.vue";
 <template>
     <main>
         <div id = "container">
-            <div class = "flex-elements">
-                <img src = "../assets/svg_photos/DREAM_SPACE.svg" id = "logo-photo">
+            <div class = "flex-elements" id = "element1">
+                <LogoLink />
             </div>
             <div class = "flex-elements" id = "main-text">
-                <img src = "../assets/svg_photos/main_text.svg">
+                <MainSleepCycle />
             </div>
-            <div class = "flex-elements">
+            <div class = "flex-elements" id = "element2">
                 <AccountLink />         
             </div>
         </div>
@@ -57,6 +59,7 @@ main
 #main-text
 {
     margin-top: 1.8em;
+    width: 20em
 }
 
 #logo-photo
@@ -101,6 +104,12 @@ main
 {
     color: white;
     align-items: center;
+    width: 15em;
+}
+
+#element1
+{
+    text-align: center;
 }
 
 </style>

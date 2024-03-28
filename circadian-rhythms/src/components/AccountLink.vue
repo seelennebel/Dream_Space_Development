@@ -18,12 +18,6 @@
 
     #text
     {
-        font-family: "Roboto Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        color: var(--text-color);
-        letter-spacing: .4em;
         padding-left: 1em;
     }
 

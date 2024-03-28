@@ -1,9 +1,13 @@
 <template>
-    <div id = element>
-
+    <div id = logo>
+        <h1>DREAM SPACE</h1>
     </div>
 </template>
 
 <style scoped>
-
+    #logo
+    {
+        font-style: "Roboto Mono", monospace;
+        font-size: .6em;
+    }
 </style>
