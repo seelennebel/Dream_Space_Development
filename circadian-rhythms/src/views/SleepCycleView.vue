@@ -3,6 +3,8 @@
 import AccountLink from "../components/AccountLink.vue";
 import LogoLink from "../components/LogoLink.vue";
 import MainSleepCycle from "../components/MainSleepCycle.vue";
+import REM from "../components/REM.vue";
+import NREM from "../components/NREM.vue";
 
 </script>
 
@@ -10,13 +12,13 @@ import MainSleepCycle from "../components/MainSleepCycle.vue";
 <template>
     <main>
         <div id = "container">
-            <div class = "flex-elements" id = "element1">
+            <div class = "flex-elements" id = "logo-link">
                 <LogoLink />
             </div>
-            <div class = "flex-elements" id = "main-text">
+            <div class = "flex-elements" id = "main-text-header">
                 <MainSleepCycle />
             </div>
-            <div class = "flex-elements" id = "element2">
+            <div class = "flex-elements" id = "account-link">
                 <AccountLink />         
             </div>
         </div>
@@ -27,10 +29,10 @@ import MainSleepCycle from "../components/MainSleepCycle.vue";
             </div>
             <div id = "central-flex">
                 <div class = "central-child">
-                    <img src = "../assets/svg_photos/REM.svg">
+                    <REM />
                 </div>
                 <div class = "central-child">
-                    <img src = "../assets/svg_photos/NREM.svg">
+                    <NREM />
                 </div>
             </div>
             <div id = "bottom-text">
@@ -56,7 +58,7 @@ main
     flex-wrap: wrap;
 }
 
-#main-text
+#main-text-header
 {
     margin-top: 1.8em;
     width: 20em
@@ -78,10 +80,9 @@ main
 
 #learn-div
 {
-    font-family: "Roboto Mono", monospace;
-    color: var(--text-color);
     text-align: center;
     padding-top: 2em;
+    font-size: 1.3em;
 }
 
 #central-flex
@@ -107,7 +108,7 @@ main
     width: 15em;
 }
 
-#element1
+#logo-link
 {
     text-align: center;
 }

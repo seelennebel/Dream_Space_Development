@@ -7,7 +7,6 @@
 <style scoped>
     #logo
     {
-        font-style: "Roboto Mono", monospace;
         font-size: .6em;
     }
 </style>

@@ -1,13 +1,13 @@
 <template>
-    <div id = "container">
+    <div id = "container-account">
         <img src = "../assets/svg_photos/Rectangle.svg">
-        <h1 class = "element" id = "text">MY ACCOUNT</h1>
+        <h1>MY ACCOUNT</h1>
     </div>
 </template>
 
 <style scoped>
 
-    #container
+    #container-account
     {
         display: flex;
         flex-wrap: wrap;
@@ -16,18 +16,9 @@
         align-items: center;
     }
 
-    #text
-    {
-        padding-left: 1em;
-    }
-
-    #element
-    {
-        background-size: 100% 100%;
-    }
-
     h1
     {
+        background-size: 100% 100%;
         font-size: 1em;
         font-style: "Roboto Mono", monospace;
     }

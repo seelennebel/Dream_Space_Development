@@ -1,19 +1,25 @@
 :root
 {
+    /*
     --background-color: rgba(28, 30, 48, 1);
     --shadow-color: rgba(0, 0, 0, 0.11);
     --frame-color: rgba(46, 23, 96, 0.5);
     --text-color: rgba(255, 255, 255, 1);
+    */
+    --background-color: black;
+    --text-color: rgba(255, 255, 255, 1);
+    --frame-color: rgba(46, 23, 96, 0.5);
 }
 
 body
 {
-    font-size: 20px;
     background-color: var(--background-color);
+
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
     color: var(--text-color);
     letter-spacing: .4em;
+    font-size: 20px;
 }
