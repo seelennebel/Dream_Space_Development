@@ -1,6 +1,6 @@
 <template>
     <div id = "container-account">
-        <img src = "../assets/svg_photos/Rectangle.svg">
+        <img src = "../../assets/svg_photos/Rectangle.svg">
         <h1>MY ACCOUNT</h1>
     </div>
 </template>

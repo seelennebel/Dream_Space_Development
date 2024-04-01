@@ -8,7 +8,7 @@
     */
     --background-color: black;
     --text-color: rgba(255, 255, 255, 1);
-    --frame-color: rgba(46, 23, 96, 0.5);
+    --frame-color: linear-gradient(180deg, black, blue)
 }
 
 body
@@ -23,3 +23,40 @@ body
     letter-spacing: .4em;
     font-size: 20px;
 }
+
+/*
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 1000
+// <width>: Use a value from 25 to 151
+// <slant>: Use a value from -10 to 0
+// <ascender height>: Use a value from 649 to 854
+// <counter width>: Use a value from 323 to 603
+// <descender depth>: Use a value from -305 to -98
+// <figure height>: Use a value from 560 to 788
+// <grade>: Use a value from -200 to 150
+// <lowercase height>: Use a value from 416 to 570
+// <thick stroke>: Use a value from 27 to 175
+// <thin stroke>: Use a value from 25 to 135
+// <uppercase height>: Use a value from 528 to 760
+*/
+
+/*
+.roboto-flex> {
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" <slant>,
+    "wdth" <width>,
+    "GRAD" <grade>,
+    "XOPQ" <thick stroke>,
+    "XTRA" <counter width>,
+    "YOPQ" <thin stroke>,
+    "YTAS" <ascender height>,
+    "YTDE" <descender depth>,
+    "YTFI" <figure height>,
+    "YTLC" <lowercase height>,
+    "YTUC" <uppercase height>;
+}
+*/

@@ -4,14 +4,14 @@
             <h1>LEVERAGE YOUR</h1>
         </div>
         <div class = "elements" id = "line">
-            <img src = "../assets/svg_photos/Line.svg">
+            <img src = "../../assets/svg_photos/Line.svg">
         </div>
         <div id = "inner-container" class = "elements">
             <div class = "inner-elements" id = inner-text>
                 SLEEP
             </div>
             <div class = "inner-elements">
-                <img src = "../assets/svg_photos/CycleLogo.svg"
+                <img src = "../../assets/svg_photos/CycleLogo.svg"
             </div>
         </div>
     </div>
@@ -31,6 +31,8 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
     #upper-text
     {
@@ -40,14 +42,6 @@
     #line
     {
         text-align: center;
-    }
-    #inner-container
-    {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
     }
     #inner-text
     {
