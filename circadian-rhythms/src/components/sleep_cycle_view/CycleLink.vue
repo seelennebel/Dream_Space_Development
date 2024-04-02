@@ -48,7 +48,7 @@ import { RouterLink } from "vue-router"
 
     #text
     {
-        width: 30em;
+        width: 25em;
     }
 
 </style>

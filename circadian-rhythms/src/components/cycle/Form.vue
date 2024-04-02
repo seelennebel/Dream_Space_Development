@@ -1,46 +1,58 @@
 <script setup>
 
+import * as chrono from "../../assets/chrono";
+
 import { ref } from "vue";
 
 const sleep_duration = ref("");
 const time_to_fall_asleep = ref("");
 const time_to_sleep = ref("");
 
-const hand = () =>
-{
-    console.log(sleep_duration);
-    console.log(time_to_fall_asleep);
-    console.log(time_to_sleep);
-}
+const bed_hours = ref("");
+const bed_minutes = ref("");
 
-const get_time = (string) =>
-{
+const hours = ref("");
+const minutes = ref("");
 
-    let dur = "";
-
-    for(let i = 0; i < string.length; ++i)
-    {
-        if(string[i] != " ")
-        {
-            dur += string[i];
-        }
-        else
-        {
-            break;
-        }
-    }
-    return dur;
-}
 
 const handler = () =>
 {
 
-    console.log(get_time(sleep_duration.value));
+let duration = parseFloat(chrono.get_time(sleep_duration.value));
+let fall_asleep = parseInt(chrono.get_time(time_to_fall_asleep.value));
+let to_sleep = (chrono.trim_clock(chrono.get_clock(time_to_sleep.value)));
 
-    
+let curr_minutes = (parseInt(to_sleep[0]) * 60) + parseInt(to_sleep[1]);
+let sum_minutes = curr_minutes + fall_asleep + (duration * 60);
+let bed_time = curr_minutes + fall_asleep;
+
+let result = [0, 0];
+
+if(sum_minutes > 1440)
+{
+    let dif = sum_minutes - 1440;
+    result[0] = dif / 60;
+    result[1] = dif % 60;
+}
+else
+{
+    result[0] = sum_minutes / 60;
+    result[1] = sum_minutes % 60;
+
 }
 
+hours.value = chrono.zeroer(parseInt(result[0]));
+minutes.value = chrono.zeroer(parseInt(result[1]));
 
+console.log(hours.value);
+console.log(result[1]);
+
+bed_hours.value = chrono.zeroer(Math.floor(bed_time / 60));
+bed_minutes.value = chrono.zeroer(bed_time % 60);
+
+console.log(Math.floor(bed_time / 60));
+
+}
 </script>
 
 
@@ -60,7 +72,7 @@ const handler = () =>
             <p id = "required">ENTER REQUIRED TIME TO FALL ASLEEP</p>
             <select id = "time_to_fall_asleep" for = "sleep" v-model = "time_to_fall_asleep">
                 <option disabled value = "">SELECT TIME</option>
-                <option>none</option>
+                <option>0</option>
                 <option>5 min</option>
                 <option>10 min</option>
                 <option>15 min</option>
@@ -84,11 +96,11 @@ const handler = () =>
     <div id = "right-container">
         <div>
             <p id = "top-result" class = "result">GO TO BED AT</p>
-            <p>RESULT</p>
+            <p class = "result"> {{ bed_hours }}:{{ bed_minutes }}</p>
         </div>
         <div>
             <p class = "result">WAKE UP AT</p>
-            <p>RESULT</p>
+            <p class = "result">{{ hours }}:{{ minutes }}</p>
         </div>
     </div>
 </div>

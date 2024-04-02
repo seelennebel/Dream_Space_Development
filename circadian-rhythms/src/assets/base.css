@@ -11,7 +11,7 @@
     --frame-color: linear-gradient(180deg, black, blue)
 }
 
-body
+html, body 
 {
     background-color: var(--background-color);
 
@@ -22,6 +22,19 @@ body
     color: var(--text-color);
     letter-spacing: .4em;
     font-size: 20px;
+
+    margin: 0;
+    height: 100%;
+}
+
+#app
+{
+    height: 100%;
+}
+
+main
+{
+    height: 100%;
 }
 
 /*
