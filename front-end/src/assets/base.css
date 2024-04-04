@@ -1,0 +1,80 @@
+/*
+
+Embed code in the <head> of your html
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wdth,wght,GRAD@0,8..144,50..150,100..900,-50..100;1,8..144,50..150,100..900,-50..100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC@8..144,-10..0,25..151,100..1000,-200..150,27..175,323..603,25..135,649..854,-305..-98,560..788,416..570,528..760&display=swap');
+
+*/
+
+:root
+{
+    --background-color: rgba(28, 30, 48, 1);
+    --text-color: rgba(255, 255, 255, 1);
+
+    --Roboto-Mono: "Roboto Mono";
+    --Roboto-Flex: "Roboto Flex";
+    --Roboto-Serif: "Roboto Serif";
+}
+
+html, body 
+{
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--text-color);
+    letter-spacing: .4em;
+    font-size: 20px;
+
+    margin: 0;
+    height: 100%;
+}
+
+#app
+{
+    height: 100%;
+}
+
+main
+{
+    height: 100%;
+}
+
+/*
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 1000
+// <width>: Use a value from 25 to 151
+// <slant>: Use a value from -10 to 0
+// <ascender height>: Use a value from 649 to 854
+// <counter width>: Use a value from 323 to 603
+// <descender depth>: Use a value from -305 to -98
+// <figure height>: Use a value from 560 to 788
+// <grade>: Use a value from -200 to 150
+// <lowercase height>: Use a value from 416 to 570
+// <thick stroke>: Use a value from 27 to 175
+// <thin stroke>: Use a value from 25 to 135
+// <uppercase height>: Use a value from 528 to 760
+*/
+
+/*
+.roboto-flex> {
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" <slant>,
+    "wdth" <width>,
+    "GRAD" <grade>,
+    "XOPQ" <thick stroke>,
+    "XTRA" <counter width>,
+    "YOPQ" <thin stroke>,
+    "YTAS" <ascender height>,
+    "YTDE" <descender depth>,
+    "YTFI" <figure height>,
+    "YTLC" <lowercase height>,
+    "YTUC" <uppercase height>;
+}
+*/
