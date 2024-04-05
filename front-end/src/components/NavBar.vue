@@ -1,12 +1,18 @@
+<script setup>
+
+import { RouterLink } from 'vue-router';
+
+</script>
+
 <template>
     <div>
       <div class="navig">
-        <a href="/">DREAM SPACE</a>
-        <a href="circadianrhythms">SLEEP CYCLE</a>
-        <a href="sleeptracker">SLEEP TRACKER</a>
-        <a href="articles">ARTICLES</a>
-        <a href="support">SUPPORT</a>
-        <a href="signin">SIGN IN</a>
+        <RouterLink to="/">DREAM SPACE</RouterLink>
+        <RouterLink to="/cycle">SLEEP CYCLE</RouterLink>
+        <RouterLink to="/sleeptracker">SLEEP TRACKER</RouterLink>
+        <RouterLink to="/articles">ARTICLES</RouterLink>
+        <RouterLink to="/support">SUPPORT</RouterLink>
+        <RouterLink to="/signup">LOGIN</RouterLink>
       </div>
     </div>
   </template>

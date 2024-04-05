@@ -10,9 +10,6 @@ import Form from "../components/cycle/Form.vue";
     <main>
         <NavBar />
         <div id = "globa">
-            <div id = "header">
-
-            </div>
             <div id = "logo">
                 <img src = "../assets/svg_photos/CycleLogo.svg">
             </div>
@@ -24,27 +21,24 @@ import Form from "../components/cycle/Form.vue";
 </template>
 
 <style scoped>
+
+    main
+    {
+        background-image: url("../assets/photos/sky.jpg");
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
     #main-container
     {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        padding-bottom: 3em;
-        padding-top: 2em;
+        padding-top: 1em;
         height: 100%;
-    }
-
-    #globa
-    {
-        background: var(--frame-color);
-        min-height: 100%;
-    }
-
-    main
-    {
-        background: var(--frame-color);
-        height: 100%;
-        margin: 0;
     }
 
     #logo
@@ -52,13 +46,9 @@ import Form from "../components/cycle/Form.vue";
         text-align: center;
     }
 
-    #header
-    {
-        height: 3em;
-    }
-
     img
     {
+        padding-top: 2em;
         width: 15%;
     }
 

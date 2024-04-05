@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import CycleMainPageView from '../views/CycleMainPageView.vue';
 import SleepCycleView from '../views/SleepCycleView.vue';
+import SignUpView from "../views/SignUpView.vue";
 
 
 const router = createRouter({
@@ -15,6 +16,11 @@ const router = createRouter({
       path: '/cycle',
       name: 'SleepCycle',
       component: SleepCycleView
+    },
+    {
+      path: "/signup",
+      name: "signup",
+      component: SignUpView
     }
   ]
 })

@@ -110,12 +110,13 @@ console.log(Math.floor(bed_time / 60));
 
     #top-result
     {
-        padding-top: 0.5em;
+        padding-top: 1.45em;
     }
 
     .result
     {
         font-size: 1em;
+        font-weight: 500;
     }
 
     #right-container
@@ -140,6 +141,7 @@ console.log(Math.floor(bed_time / 60));
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
+        height: fit-content;
     }
 
     #button-container
@@ -185,7 +187,7 @@ console.log(Math.floor(bed_time / 60));
             "YTLC" 514,
             "YTUC" 712;
             
-        font-size: 0.7em;
+        font-size: 1em;
         text-align: center;
     }
 
