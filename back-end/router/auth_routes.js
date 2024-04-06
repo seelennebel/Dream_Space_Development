@@ -1,13 +1,13 @@
 const { Router } = require("express");
-const controller = require("../controller/controller");
+const controller = require("../controller/auth_controller");
 
 const router = Router();
 
-router.get("/login");
+router.get("/login", controller.login_get);
 
-router.get("/signup");
+router.get("/signup", controller.signup_get);
 
-router.post("/login");
+router.post("/login", controller.login_post);
 
 router.post("/signup", controller.signup_post);
 

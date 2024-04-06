@@ -11,7 +11,7 @@ import { RouterLink } from "vue-router"
                 <h1>Use</h1>
             </div>
             <div id = "two">
-                <RouterLink to = "cycle">
+                <RouterLink to = "/cycle">
                     <img src = "../../assets/svg_photos/CycleLogo.svg">
                 </RouterLink>
             </div>

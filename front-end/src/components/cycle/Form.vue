@@ -23,8 +23,8 @@ let fall_asleep = parseInt(chrono.get_time(time_to_fall_asleep.value));
 let to_sleep = (chrono.trim_clock(chrono.get_clock(time_to_sleep.value)));
 
 let curr_minutes = (parseInt(to_sleep[0]) * 60) + parseInt(to_sleep[1]);
-let sum_minutes = curr_minutes + fall_asleep + (duration * 60);
-let bed_time = curr_minutes + fall_asleep;
+let sum_minutes = curr_minutes - fall_asleep + (duration * 60);
+let bed_time = curr_minutes - fall_asleep;
 
 let result = [0, 0];
 
@@ -60,7 +60,7 @@ console.log(Math.floor(bed_time / 60));
 <div id = "left">
     <div id = "left-form">
         <div id = "form-container">
-                <p>SELECT DESIRED TIME TO SLEEP</p>        
+                <p>SELECT THE DURATION OF SLEEP</p>        
             <select id = "sleep_duration" for = "hours" v-model = "sleep_duration">
                 <option disabled value = "">SELECT DURATION</option>
                 <option>3 hours</option>

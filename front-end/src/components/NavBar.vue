@@ -8,7 +8,7 @@ import { RouterLink } from 'vue-router';
     <div>
       <div class="navig">
         <RouterLink to="/">DREAM SPACE</RouterLink>
-        <RouterLink to="/cycle">SLEEP CYCLE</RouterLink>
+        <RouterLink to="/cycle-main">SLEEP CYCLE</RouterLink>
         <RouterLink to="/sleeptracker">SLEEP TRACKER</RouterLink>
         <RouterLink to="/articles">ARTICLES</RouterLink>
         <RouterLink to="/support">SUPPORT</RouterLink>

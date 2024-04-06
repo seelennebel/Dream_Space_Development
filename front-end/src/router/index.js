@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import CycleMainPageView from '../views/CycleMainPageView.vue';
 import SleepCycleView from '../views/SleepCycleView.vue';
 import SignUpView from "../views/SignUpView.vue";
+import MainPageView from "../views/MainPageView.vue";
+import ArticlesView from "../views/ArticlesPageView.vue";
 
 
 const router = createRouter({
@@ -9,18 +11,28 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'SleepCycleMainPage',
-      component: CycleMainPageView
+      name: 'MainPage',
+      component: MainPageView
+    },
+    {
+      path: '/cycle-main',
+      name: 'SleepCycleMain',
+      component: CycleMainPageView,
     },
     {
       path: '/cycle',
       name: 'SleepCycle',
-      component: SleepCycleView
+      component: SleepCycleView,
     },
     {
       path: "/signup",
       name: "signup",
       component: SignUpView
+    },
+    {
+      path: "/articles",
+      name: "articles",
+      component: ArticlesView
     }
   ]
 })

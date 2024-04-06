@@ -9,7 +9,6 @@ import NavBar from "../components/NavBar.vue";
 </script>
 
 <template>
-    <main>
         <div id = "globa">
             <NavBar />
             <div id = "central">
@@ -27,7 +26,6 @@ import NavBar from "../components/NavBar.vue";
                 <CycleLink />
             </div>
         </div>
-    </main>
 </template>
 
 <style scoped>
@@ -67,6 +65,11 @@ import NavBar from "../components/NavBar.vue";
     padding-top: 2em;
     padding-bottom: 2em;
 
+}
+
+main
+{
+    height: 100%;
 }
 
 </style>
