@@ -1,42 +1,46 @@
 <template>
     <div>
         <NavBar/>
-    </div>
-        <main>
-        <div class="full_size_img">
-            <form @submit.prevent = handle_submit>
-            <div class="shape-container">
+      </div>
+    <main>
+      <div class="full_size_img">
+        <div class="shape-container">
+          <form @submit.prevent = "handle_submit">
             <div class="shape">
-                <div class="text-container-top">
-                <h2>Sign up</h2>
+              <div class="text-container-top">
+                <h2>LOGIN</h2>
+              </div>
+              <div id = "upper" class="email-shape-container">
+                <div class="email-shape">
+                  <input type="text" placeholder="Enter your username" name = "username" required> 
                 </div>
-                    <div id = "upper" class="email-shape-container">
-                      <div class="email-shape">
-                          <input type="text" placeholder = "Enter username" name = "username"> 
-                      </div>
-                    </div>
-                    <div id = "lower" class="email-shape-container">
-                      <div class="email-shape" id = "lower-email">
-                          <input type="password" placeholder="Enter your password" name = "user_password"> 
-                      </div>
-                      <div id = "error">
-                        <p> {{ user_error }} </p>
-                      </div>
-                    </div>
-                    <button class="account">Submit</button>
+              </div>
+              <div id = "lower" class="email-shape-container">
+                <div class="email-shape">
+                  <input type="password" placeholder = "Enter your password" name = "user_password" required> 
+                </div>
+              </div>
+              <p> {{ user_error }} </p>
+              <button type = "submit" class = "account" id = "bu">Submit</button>
+              <RouterLink to = "/signup_page" class="account">Don't have an account? SIGN UP</RouterLink>
             </div>
-            </div>
-            </form>
+          </form>
         </div>
-        </main>
+      </div>
+    </main>
 </template>
 
 <script setup>
 
-import NavBar from "../components/NavBar.vue";
+import NavBar from "/src/components/NavBar.vue";
+import { RouterLink } from "vue-router";
 import { ref } from "vue";
 
 const user_error = ref("");
+
+const change_location = () => {
+  location.assign("/");
+};
 
 const handle_submit = (event) => {
     event.preventDefault();
@@ -44,7 +48,7 @@ const handle_submit = (event) => {
     const usr = form_data.get("username");
     const usr_password = form_data.get("user_password");
 
-    let url = 'http://localhost:8000/signup';
+    let url = 'http://localhost:8000/login';
 
     let options = {
       method: 'POST',
@@ -53,7 +57,6 @@ const handle_submit = (event) => {
         "Access-Control-Allow-Origin": "http://localhost:8000"
       },
       body: JSON.stringify({"username": usr ,"user_password": usr_password})
-      
     };
 
     let status = 0;
@@ -64,40 +67,35 @@ const handle_submit = (event) => {
         return res.json();
       })
       .then(json => {
-        console.log(json);
-        if(status === 201) {   
-          document.cookie = `jwt=${json.token}; Max-Age=86400;`;
+        if(status === 201) {
           user_error.value = "SUCCESS!";
-          location.assign("/");
+          console.log(json);
+          document.cookie = `jwt=${json.token}; Max-Age=86400;`;
+          setTimeout(change_location, 2000);
         }
-        if(json.username && usr == "") {
-          user_error.value = json.username;
+        else if(status === 400) {
+          user_error.value = "Invalid data";
         }
-        if(json.user_password) {
-          user_error.value = json.user_password;
-        }
-        if(json.username && json.user_password) {
-          user_error.value = "Enter your username and password";
+        else if(status === 404) {
+          user_error.value = "Invalid data";
         }
       })
       .catch(err => console.log('error:' + err));
-
 };
 
 </script>
 
 <style scoped>
 
-  #lower-email
+  p
   {
-    margin-top: 0.5em;
+    font-size: 0.8em;
   }
 
-  #error
+  #bu
   {
-    font-size: 0.9em;
-    width: 70%;
-    text-align: center;
+    font-size: 1em;
+    margin-bottom: 1em;
   }
 
   input
@@ -111,12 +109,12 @@ const handle_submit = (event) => {
 
   #lower
   {
-    margin-bottom: 2em;
+    padding-bottom: 1em;
   }
 
   #upper
   {
-    padding-top: 4.5em;
+    padding-top: 5em;
   }
 
   main {
@@ -135,7 +133,7 @@ const handle_submit = (event) => {
     height: fit-content;
     position: relative;
     padding-top: 5em;
-    padding-bottom: 3em;
+    padding-bottom: 5em;
   }
   
   .shape {
@@ -174,8 +172,6 @@ const handle_submit = (event) => {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
   }
   
   .email-shape {
@@ -202,13 +198,12 @@ const handle_submit = (event) => {
     color: white;
     font-family: 'Roboto Mono';
     letter-spacing: 0.1em;
-    margin-bottom: 1em;
-    font-size: 1.3em;
+    margin-bottom: 3em;
+    font-size: 0.8em;
   }
   
   .account:hover {
     background-color: #1C1E30;
     color: white;
   }
-
-</style>
+  </style>

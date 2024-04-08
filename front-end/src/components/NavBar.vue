@@ -1,9 +1,3 @@
-<script setup>
-
-import { RouterLink } from 'vue-router';
-
-</script>
-
 <template>
     <div>
       <div class="navig">
@@ -12,11 +6,17 @@ import { RouterLink } from 'vue-router';
         <RouterLink to="/sleeptracker">SLEEP TRACKER</RouterLink>
         <RouterLink to="/articles">ARTICLES</RouterLink>
         <RouterLink to="/support">SUPPORT</RouterLink>
-        <RouterLink to="/signup">LOGIN</RouterLink>
+        <RouterLink to="/login">LOGIN</RouterLink>
       </div>
     </div>
   </template>
   
+<script setup>
+
+import { RouterLink } from 'vue-router';
+
+</script>
+
   <style scoped>
   .navig
   {

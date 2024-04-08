@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require("bcrypt");
 
 const valid = (input) => {
   if(input.trim().length === 0) {
@@ -10,26 +11,27 @@ const valid = (input) => {
 const User_Schema = new mongoose.Schema({
   username: {
     type: String,
-    required: [true, "please, enter your username"],
+    required: [true, "Please, enter your username"],
     unique: true,
     validate: [valid, "username in not valid"]
   },
   user_password: {
     type: String,
-    required: [true, "please, enter your password"],
+    required: [true, "Please, enter your password"],
     validate: [valid, "password is not valid"]
   }
 });
 
-User_Schema.pre("save", function() => {
-  
-});
-
-User_Schema.post("save", (doc, next) => {
-  console.log(doc);
+User_Schema.pre("save", async function(next) {
+  const salt = await bcrypt.genSalt();
+  this.user_password = await bcrypt.hash(this.user_password, salt);
   next();
 });
 
-const User = mongoose.model('user12', User_Schema);
+User_Schema.post("save", (doc, next) => {
+  next();
+});
+
+const User = mongoose.model('users', User_Schema);
 
 module.exports = User; 

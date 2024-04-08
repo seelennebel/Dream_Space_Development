@@ -1,3 +1,4 @@
+// if number is 8, it returns "08"
 export const zeroer = (number) =>
 {
     if(number == 0)
@@ -16,6 +17,7 @@ export const zeroer = (number) =>
     
 }
 
+// check if string has zeros for example 00:00 = true, 10:12 = false
 export const check_zeros = (part) =>
 {
     if(part == "00")
@@ -28,6 +30,7 @@ export const check_zeros = (part) =>
     }
 }
 
+// returns number without zero ---> 08 => 8
 export const trim = (part) =>
 {
     if(part[0] == "0")
@@ -38,9 +41,9 @@ export const trim = (part) =>
     return part;
 }
 
+// deletes zeroes from a list of 2 numbers for example [20,09] => [20, 9]
 export const trim_clock = (list) =>
 {
-
     for(let i = 0; i < list.length; ++i)
     {
         if(check_zeros(list[i]))
@@ -57,6 +60,7 @@ export const trim_clock = (list) =>
     return list;
 }
 
+// get's clock from string (do not use this function since it was designed specifically for a particular string)
 export const get_clock = (string) =>
 {
       
@@ -89,6 +93,7 @@ export const get_clock = (string) =>
     return list;
 }
 
+// also don't use
 export const get_time = (string) =>
 {
 

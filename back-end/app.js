@@ -1,6 +1,7 @@
 const express = require("express");
 const auth_routes = require("./router/auth_routes");
 const mongoose = require("mongoose");
+const cors = require("cors")
 
 const port = 8000;
 
@@ -16,9 +17,13 @@ mongoose.connect(database)
 
 app.use(express.json());
 app.use(auth_routes);
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
 
 app.get("/", (req, res) => {
-    res.send("Hello from the backend");
+    res.send({AMIGO: "ANAL"});
     res.end();
 });
 

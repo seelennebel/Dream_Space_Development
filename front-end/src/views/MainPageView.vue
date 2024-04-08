@@ -1,8 +1,12 @@
 <script setup>
 
-import NavBar from "../components/NavBar.vue"; 
+import NavBar from "/src/components/NavBar.vue"; 
+
 
 </script>
+
+
+
 
 <template>
     <div>
@@ -17,11 +21,17 @@ import NavBar from "../components/NavBar.vue";
     </main>
 </template>
        
-<style scoped>
 
-    main
+<style scoped>
+    main 
     {
-        border-radius: 24px;
+        background-image: url("../assets/photos/sky.jpg");
+        width: 100%;
+        height:100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    
     }
 
     img
@@ -38,11 +48,11 @@ import NavBar from "../components/NavBar.vue";
     {
         text-align: center;
         color: white;
-        padding-top: 0,5em;
         font-weight: normal;
         letter-spacing: 1em;
         font-size: 40px;
         font-family: "Roboto Mono", monospace;
+        margin-top: 0;
 
     }
 
@@ -53,6 +63,7 @@ import NavBar from "../components/NavBar.vue";
         font-weight: normal;
         font-size: 25px;
         font-family: "Roboto Mono", monospace;
+        margin-bottom: 0;
 
     }
 </style>
