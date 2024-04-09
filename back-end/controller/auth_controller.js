@@ -60,7 +60,7 @@ module.exports.login_post = async (req, res) => {
 
 module.exports.signup_post = async (req, res) => {
     const { username, user_password } = req.body;
-
+    
     try {
         const user = await User.create({username, user_password});
 
