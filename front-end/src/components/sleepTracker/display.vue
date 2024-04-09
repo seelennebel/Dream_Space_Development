@@ -4,7 +4,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     const wakeUpTime = ref('');
-    const chosenHour = ref('');
+    const chosenHour = ref('')
 
     const displayChosenHour = () => {
       chosenHour.value = wakeUpTime.value;
