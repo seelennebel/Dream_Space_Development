@@ -7,6 +7,7 @@ import MainPageView from "../views/MainPageView.vue";
 import ArticlesView from "../views/ArticlesPageView.vue";
 import SignUpView from '..//views/SignUpView.vue';
 import SupportView from '../views/SupportView.vue';
+import sleepTracker from '../views/sleeptracker.vue';
 
 
 const router = createRouter({
@@ -46,6 +47,11 @@ const router = createRouter({
       path: "/support",
       name: "support",
       component: SupportView
+    },
+    {
+      path: "/sleeptracker",
+      name: "sleeptracker",
+      component: sleepTracker
     }
   ]
 })

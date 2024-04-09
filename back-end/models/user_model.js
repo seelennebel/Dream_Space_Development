@@ -19,6 +19,14 @@ const User_Schema = new mongoose.Schema({
     type: String,
     required: [true, "Please, enter your password"],
     validate: [valid, "password is not valid"]
+  },
+  wakeUpTime: {
+    type: String,
+    required: true
+  },
+  bedtime: {
+    type: String,
+    required: true
   }
 });
 
