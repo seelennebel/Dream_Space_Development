@@ -67,60 +67,50 @@ watch(sleepEntries, (newSleepEntries) => {
 				maintainAspectRatio: false
 			}
 		})
+		sleepChart.value.data.labels.reverse();
+sleepChart.value.data.datasets[0].data.reverse();
 	})
 }, { deep: true })
 </script>
 
 <template>
     <div class="container">
+		<form @submit.prevent="addSleepHours">
+			<input 
+				type="number"
+				step="0.5"
+				min="0"
+				max="24"
+				v-model="sleepInput" />
 
-<h1>Sleep Tracker</h1>
+			<input
+				type="date"
+				:min="oneYearAgo"
+				:max="currentDate"
+				v-model="selectedDate"/>
 
-<div class="current">
-  <span>{{ currentSleep.hours }}</span>
-  <small>Current Hours of Sleep</small>
-</div>
+			<input	
+				type="submit"
+				value="Add/Update sleep hours" />
+		</form>
 
-<form @submit.prevent="addSleepHours">
-  <input 
-    type="number"
-    step="0.5"
-    min="0"
-    max="24"
-    v-model="sleepInput" />
+		<div v-if="sleepEntries && sleepEntries.length > 0">
 
-  <input
-    type="date"
-    :min="oneYearAgo"
-    :max="currentDate"
-    v-model="selectedDate" />
-
-  <input	
-    type="submit"
-    value="Add/Update sleep hours" />
-</form>
-
-<div v-if="sleepEntries && sleepEntries.length > 0">
-
-  <h2>
-    Sleep History
-  </h2>
-
-  <div class="canvas-box">
-    <canvas ref="sleepChartEl"></canvas>
-  </div>
-
-  <div class="sleep-history">
-    <h2>Sleep Hours History</h2>
-    <ul>
-      <li v-for="sleep in sleepEntries">
-        <span>{{ sleep.hours }} hours</span>
-        <small>
-          {{ new Date(sleep.date).toLocaleDateString() }}
-        </small>
-      </li>
-    </ul>
-  </div>
+			<h2>Sleep History</h2>
+			<div class="canvas-box">
+				<canvas ref="sleepChartEl"></canvas>
+			</div>
+			<div class="sleep-history">
+				<h2>Sleep Hours History</h2>
+				<ul>
+				<li v-for="sleep in sleepEntries">
+					<span>{{ sleep.hours }} hours</span>
+					<small>
+					{{ new Date(sleep.date).toLocaleDateString() }}
+					</small>
+				</li>
+				</ul>
+		</div>
 
 </div>
 

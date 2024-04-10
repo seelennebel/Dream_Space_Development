@@ -22,12 +22,12 @@ export default {
 <template>
     <div class="wake-up-display">
       <div class="wake-up-time">
-        <label for="wakeUpTime">Enter Your Desired Wake-up Time:</label>
+        <label for="wakeUpTime">Enter Your Wake-up Time:</label>
         <input type="time" id="wakeUpTime" v-model="wakeUpTime" @change="displayChosenHour" />
       </div>
       <div v-if="chosenHour" class="display container">
         <div class="wake-up-hour display">
-          <p>{{ chosenHour }}</p>
+          <p id="display">{{ chosenHour }}</p>
         </div>
       </div>
     </div>
@@ -35,54 +35,45 @@ export default {
   
 <style scoped>
 .wake-up-display {
-  padding: 10px;
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.wake-up-time {
+.wake-up-time{
   display: flex;
-  flex-direction: row;
-  width: auto;
+  flex-direction: column;
   height: 100%;
-  background-color: var(--container-backrgroundcolor);
   padding: 30px;
   border-radius: 10px;
   margin: 10px;
-  border: thick white dotted;
+}
+input[type = "time"]{
+  border-radius: 10px;
+  display: block;
+  width:max-content;
+  padding: 0;
+  border: 0;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.5em;
+  color: black;
+  background-color:rgb(217, 216, 216);
+  margin-top: 20px;
 }
 
 .wake-up-hour.display{
-    margin: 10px;
-  border: thick white dotted;
-}
-
-.button {
-  background-color: var(--container-backrgroundcolor);
-  width: max-content;
-  border-radius: 10px;
-  color: white;
-}
-
-.display.container {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  justify-content: center;
+  border: thin white groove;
   align-items: center;
-  gap: 10px;
-  margin: 10px;
-  width: auto;
-  height: auto;
-  padding: 0px;
-  color: white;
-  border-radius: 10px;
-}
-
-.wake-up-hour.display {
+  justify-content: center;
   border-radius: 10px;
   width: auto;
   height: 70px;
-  background-color: var(--container-backrgroundcolor);
   padding: 30px 30px 10px 10px;
   margin: 10px;
+}
+#display{
+    padding-left: 10px;
 }
 </style>
