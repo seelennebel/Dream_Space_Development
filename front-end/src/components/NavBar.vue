@@ -6,7 +6,6 @@
         <RouterLink to="/sleeptracker">SLEEP TRACKER</RouterLink>
         <RouterLink to="/articles">ARTICLES</RouterLink>
         <RouterLink to="/support">SUPPORT</RouterLink>
-        <RouterLink to="/login">LOGIN</RouterLink>
       </div>
     </div>
   </template>

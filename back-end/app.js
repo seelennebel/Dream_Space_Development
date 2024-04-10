@@ -1,31 +1,28 @@
 const express = require("express");
-const auth_routes = require("./router/auth_routes");
-const mongoose = require("mongoose");
-const cors = require("cors")
-
-const port = 8000;
+const path = require("path");
+const helmet = require("helmet");
+const rateLimiter = require("./middleware/rateLimiter");
+const cors = require("cors");
 
 const app = express();
 
-const database = "mongodb+srv://seelennebel:seelennebel@dreamspace.rv09qyt.mongodb.net/";
-mongoose.connect(database)
-    .then((result) => {
-        app.listen((port));
-        console.log(`listening on port ${port}`);
-    })
-    .catch((err) => {console.log(err)});
+const port = 8000;
 
-app.use(express.json());
-app.use(auth_routes);
-app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
-}));
+//SECURITY
+app.use(helmet());
+app.use(rateLimiter);
 
-app.get("/", (req, res) => {
-    res.send({AMIGO: "ANAL"});
-    res.end();
+app.use(express.static(path.join(__dirname, "../front-end/dist")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../front-end/dist/index.html"));
 });
+
+app.listen(port, () => {
+    console.log(`listening on port ${port}`);
+});
+
+
 
 
 

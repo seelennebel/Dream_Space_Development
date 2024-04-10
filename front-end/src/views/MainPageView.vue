@@ -13,16 +13,24 @@ import NavBar from "/src/components/NavBar.vue";
         <NavBar/>
       </div>
     <main>
+        <div id = "container">
            <h1>DREAM SPACE</h1>
                 <div id="image">
                     <img src = "../assets/svg_photos/MOON.svg">
                 </div>
-            <h2>START YOU SLEEPING JOURNEY NOW</h2>       
+            <h2>START YOU SLEEPING JOURNEY NOW</h2> 
+        </div>      
     </main>
 </template>
        
 
 <style scoped>
+
+    #container
+    {
+        padding-top: 4em;
+    }
+
     main 
     {
         background-image: url("../assets/photos/sky.jpg");
@@ -31,7 +39,6 @@ import NavBar from "/src/components/NavBar.vue";
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-    
     }
 
     img
