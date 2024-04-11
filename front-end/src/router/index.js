@@ -4,7 +4,8 @@ import CycleMainPageView from "../views/CycleMainPageView.vue";
 import SleepCycleView from "../views/SleepCycleView.vue";
 import MainPageView from "../views/MainPageView.vue";
 import ArticlesView from "../views/ArticlesPageView.vue";
-import SupportView from "../views/SupportView.vue";
+import SignUpView from '..//views/SignUpView.vue';
+import SupportView from '../views/SupportView.vue';
 
 
 const router = createRouter({
@@ -34,6 +35,11 @@ const router = createRouter({
       path: "/support",
       name: "support",
       component: SupportView
+    },
+    {
+      path: "/sleeptracker",
+      name: "sleeptracker",
+      component: sleepTracker
     }
   ]
 });
