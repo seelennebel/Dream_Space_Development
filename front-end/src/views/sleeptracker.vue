@@ -91,8 +91,12 @@ watch(sleepEntries, (newSleepEntries) => {
 
 <template>
     <NavBar />
+    <main>
+    
     <div class="main-div">
+        <div>
         <h1>Sleep tracker</h1>
+        </div>
         <div class="bed-wake">
                 <div class="date input">
                     <h3 class="Date-input text">Select a Date: </h3>
@@ -126,21 +130,45 @@ watch(sleepEntries, (newSleepEntries) => {
                 </div>
             </div>
         </div>
-        <articleRoute/>
+        <articleRoute id = "article-route" />
     </div>
+    </main>
 </template>
 <style scoped>
+
+main
+{
+    overflow-y: scroll;
+    background-image: url("../assets/photos/sky.jpg");
+    background-size: cover;
+    max-width: 100vw;
+   
+
+}
+
+html, body 
+{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#article-route
+{
+    padding-top: 1vw;
+    padding-bottom: 6vw;
+    
+}
+
 .main-div{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    overflow-y: auto;
-    max-height: calc(100vh-100px);
-    height: 100%;
-    background-image: url("../assets/photos/sky.jpg");
+    height: fit-content;
     align-content: center;
     justify-content: center;
     text-align: center;
+    min-height: 100vh;
 }
 h3, h1{
     text-align: center;
@@ -152,6 +180,7 @@ h3, h1{
     justify-content: center;
     margin: 20px;
     gap: 10px;
+    padding-top: 3vw;
 }
 
 .bedtime.input, .wake-up.input{
@@ -184,7 +213,7 @@ input[type = "time"], input[type = "date"]{
 }
 
 .canvas-box {
-    position: relative;
+  position: relative;
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -202,5 +231,13 @@ input[type = "time"], input[type = "date"]{
 #date-history{
     padding-left: 10px;
     margin-left: 10px;
+}
+ .navbar 
+{
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    z-index: 1000;
 }
 </style>

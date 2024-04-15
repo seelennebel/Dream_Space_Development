@@ -4,9 +4,8 @@ import CycleMainPageView from "../views/CycleMainPageView.vue";
 import SleepCycleView from "../views/SleepCycleView.vue";
 import MainPageView from "../views/MainPageView.vue";
 import ArticlesView from "../views/ArticlesPageView.vue";
-import SignUpView from '..//views/SignUpView.vue';
 import SupportView from '../views/SupportView.vue';
-
+import SleepTracker from "@/views/sleeptracker.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,7 +38,7 @@ const router = createRouter({
     {
       path: "/sleeptracker",
       name: "sleeptracker",
-      component: sleepTracker
+      component: SleepTracker
     }
   ]
 });

@@ -7,18 +7,18 @@ import { RouterLink } from "vue-router"
     <div class="blog-route container">
         <div class="text-link">
             <div class="text container-item">
-                <span id="problem-text">Have a problem</span>
+                <span id="problem-text">HAVE A PROBLEM</span>
                 <br>
-                <span id="sleeping-text"> Sleeping?</span>
+                <span id="sleeping-text"> SLEEPING?</span>
             </div>
             <div class="read container-item">
-                <RouterLink to = "../views/ArticlesPageView.vue" class="link">
+                <RouterLink to = "/articles" class="link">
                     <span>Check these articles ! </span>
                 </RouterLink>
             </div>
         </div>
         <div class="image container-item">
-            <img src="../assets/photos/sleep.png" alt="A person with problems to fall asleep" width="200px" height="170px">
+            <img src="@/assets/photos/first.jpg" alt="A person with problems to fall asleep" width="200px" height="170px">
         </div>
     </div>
 </template>
@@ -50,11 +50,11 @@ import { RouterLink } from "vue-router"
     }
 
     #problem-text{
-        color: rgb(202, 78, 78);
+        color: red;
     }
 
     #sleeping-text{
-        color: azure;
+        color: red;
     }
     .read.container-item{
         text-align: center;
@@ -66,7 +66,7 @@ import { RouterLink } from "vue-router"
     }
     .link{
         text-decoration: none;
-        color: rgb(20, 0, 255);
+        color: azure;
         width: 100%;
         height: 100%;
         padding: 20px;
@@ -76,7 +76,14 @@ import { RouterLink } from "vue-router"
         margin-right: 0;
         margin-left: 0;
         align-items: flex-start;
-        justify-content:flex-start; 
-        background-color: azure;
+        justify-content:flex-start;
+        transition: background-color 0.3s ease;
+        text-decoration: none; 
+        border-radius: 5px;
+        display: inline-block;
+        
+    }
+    .link:hover{
+        background-color: #3423A6;
     }
 </style>

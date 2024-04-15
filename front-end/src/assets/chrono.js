@@ -10,8 +10,7 @@ export const zeroer = (number) =>
 {
     if(number == 0) // best case scenario
     {
-        number = 0;
-        return number;
+        return "00";
     }
     else if(number.toString().length == 1)
     {

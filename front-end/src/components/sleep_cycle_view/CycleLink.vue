@@ -26,6 +26,11 @@ import { RouterLink } from "vue-router"
 
 <style scoped>
 
+    img
+    {
+        padding-right : 1.5vw;
+    }
+
     #global
     {
         padding-top: 2em;
@@ -33,9 +38,18 @@ import { RouterLink } from "vue-router"
         margin-right: 10%;
     }
 
+    #two:hover
+    {
+        background-color: #3423A6;
+        transition: background-color 0.3s ease;
+    }
+
     #two
     { 
-       margin-right: 2em;
+        border-width: 1px;
+        border-color: white;
+        border-style: solid;
+        margin-right: 2em;
     }
 
     #container-cycle-link

@@ -29,7 +29,7 @@ let result = [0, 0];
 
 if(sum_minutes > 1440)
 {
-    let dif = sum_minutes - 1440;
+    let dif = sum_minutes - 1440 + fall_asleep;
     result[0] = dif / 60;
     result[1] = dif % 60;
 }
