@@ -97,17 +97,18 @@ export default {
   {
     color: white;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 25px;
     text-align: center;
-    margin-top: 0;
+    margin-top:-3em;
   }
 
   .error-message 
   {
     color: red;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 25px;
     text-align: center;
+    margin-top:-3em;
   }
   
 
