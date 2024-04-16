@@ -24,7 +24,7 @@ import Article from "@/components/Articles/Article.vue";
 <style scoped>
 main
 {
-    background-image: url("@/assets/photos/sky.jpg");
+    background-image: url("../assets/photos/sky.jpg");
     width: 100%;
     height:100vh;
     background-position: center;

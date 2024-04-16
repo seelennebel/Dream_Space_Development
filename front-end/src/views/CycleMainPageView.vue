@@ -2,7 +2,7 @@
 
 import REM from "../components/sleep_cycle_view/REM.vue";
 import NREM from "../components/sleep_cycle_view/NREM.vue";
-import CycleLink from "..//components/sleep_cycle_view/CycleLink.vue";
+import CycleLink from "../components/sleep_cycle_view/CycleLink.vue";
 
 import NavBar from "../components/NavBar.vue";
 

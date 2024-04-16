@@ -2,7 +2,6 @@
 
 import NavBar from "/src/components/NavBar.vue"; 
 
-
 </script>
 
 

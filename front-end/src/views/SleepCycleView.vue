@@ -11,7 +11,7 @@ import Form from "../components/cycle/Form.vue";
         <NavBar />
         <div id = "globa">
             <div id = "logo">
-                <img src = "../assets/svg_photos/CycleLogo.svg">
+                <img src = "@/assets/svg_photos/CycleLogo.svg">
             </div>
             <div id = "main-container">
                 <Form />
