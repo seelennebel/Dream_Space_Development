@@ -114,8 +114,10 @@ export const get_time = (string) =>
 
 export default { get_clock };
 
-// to run tests
 /*
+
+// to run tests
+
 module.exports.zeroer = (number) =>
 {
     if(number == 0) // best case scenario
@@ -222,4 +224,5 @@ module.exports.get_time = (string) =>
     }
     return dur;
 };
+
 */
